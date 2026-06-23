@@ -130,7 +130,7 @@ export default function Navbar() {
             whileTap={{
               scale: 0.95,
             }}
-            href="tel:+919999999999"
+            href="tel:+917003766790"
             className="
               hidden
               md:flex
@@ -239,7 +239,7 @@ export default function Navbar() {
             <div className="p-4">
 
               <a
-                href="tel:+919999999999"
+                href="tel:+917003766790"
                 className="
                   flex
                   items-center

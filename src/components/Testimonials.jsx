@@ -2,37 +2,35 @@ import { motion } from "framer-motion";
 import { Quote, Star, ExternalLink } from "lucide-react";
 
 const Testimonials = () => {
-  const reviewUrl =
-    "https://www.google.com/search?sca_esv=6e1dc047ffbcf906&sxsrf=ANbL-n7TTefT-5LNt6tpSb0Wvza559eW3w:1781856832659&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdV20rs_C4zrRhqe4GxT16rNduoisMR-3e_WlCFf-kQ4__5gxSXeVugBD5-wfl30_6phh2AVOA59OXXnZuKiQfoWT8V_jb6dQmrMqB1qipradC906Q%3D%3D&q=Suvojit+Aya+%26+Nurse+Centre+Reviews&sa=X&ved=2ahUKEwiYhLT87ZKVAxXtzTgGHcjWJXoQ0bkNegQIJRAF";
+  // const reviewUrl =
+  //   "https://g.page/r/CXXXXXXXXXXXXXXXX/review"; // Replace with your Google Review link
 
   const testimonials = [
     {
-      name: "Prasanta Goswami",
+      name: "Arijit Sen",
       review:
-        "Suvojit Aya & Nurse centre, very professional about their services. Very impressive and genuine rate.",
+        "Authentic Bengali food with amazing taste and excellent service. The ambience is warm and perfect for family dining.",
     },
     {
-      name: "Anisa Mondal",
-    
+      name: "Priya Mukherjee",
       review:
-        "Very nice job and best service and thanks for suvojit aya Centre",
+        "One of the best Bengali restaurants in Kolkata. Every dish was fresh, flavorful and beautifully presented.",
     },
-     {
-      name: "Banya Banerjee",
-    
+    {
+      name: "Soumen Das",
       review:
-        "Best nurses and Aya centre ... Gd job all the best",
+        "Excellent catering service for our family function. Guests loved the food and the professional arrangements.",
     },
   ];
 
   return (
     <section
       id="testimonials"
-      className="relative py-28 overflow-hidden bg-gradient-to-b from-white via-cyan-50 to-white"
+      className="relative py-28 overflow-hidden bg-gradient-to-b from-white via-orange-50 to-white"
     >
       {/* Background */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-orange-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-200/30 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -44,24 +42,24 @@ const Testimonials = () => {
           transition={{ duration: 1 }}
           className="text-center mb-20"
         >
-          <span className="px-5 py-2 rounded-full bg-cyan-100 text-cyan-700 font-semibold">
-            Testimonials
+          <span className="px-5 py-2 rounded-full bg-orange-100 text-orange-700 font-semibold">
+            Customer Reviews
           </span>
 
           <h2 className="mt-6 text-5xl lg:text-6xl font-bold text-slate-900">
-            What Families Say
-            <span className="block text-cyan-600">
-              About Our Service
+            What Our Guests Say
+            <span className="block text-orange-500">
+              About Bhojan Kolkata
             </span>
           </h2>
 
           <p className="mt-5 text-lg text-slate-600 max-w-3xl mx-auto">
-            Hundreds of families trust Suvojit Aya & Nurse Centre
-            for compassionate nursing, Aya and patient care services.
+            Hundreds of guests have enjoyed our authentic Bengali cuisine,
+            premium catering services and unforgettable dining experiences.
           </p>
         </motion.div>
 
-        {/* Cards */}
+        {/* Review Cards */}
         <div className="grid lg:grid-cols-3 gap-8">
 
           {testimonials.map((item, index) => (
@@ -79,25 +77,25 @@ const Testimonials = () => {
               }}
               viewport={{ once: true }}
               transition={{
-                duration: 1.2,
+                duration: 1,
                 delay: index * 0.2,
               }}
               whileHover={{
                 y: -15,
                 scale: 1.03,
               }}
-              className={`relative overflow-hidden rounded-[32px] p-8 shadow-xl ${
+              className={`relative overflow-hidden rounded-[32px] p-8 shadow-xl transition-all duration-500 ${
                 index === 1
-                  ? "bg-cyan-600 text-white"
-                  : "bg-white border border-slate-100"
+                  ? "bg-gradient-to-r from-orange-500 to-red-500 text-white"
+                  : "bg-white border border-orange-100"
               }`}
             >
               <Quote
                 size={80}
                 className={`absolute top-4 right-4 ${
                   index === 1
-                    ? "text-cyan-400"
-                    : "text-cyan-100"
+                    ? "text-white/20"
+                    : "text-orange-100"
                 }`}
               />
 
@@ -130,24 +128,28 @@ const Testimonials = () => {
                 <p
                   className={
                     index === 1
-                      ? "text-cyan-100"
+                      ? "text-orange-100"
                       : "text-slate-500"
                   }
                 >
-                  {item.role}
+                  Verified Guest
                 </p>
               </div>
+
             </motion.div>
           ))}
 
         </div>
-
-        {/* Google Reviews Button */}
-        <motion.div
+{/* 
+        Google Reviews Button */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{
+            duration: 1,
+            delay: 0.5,
+          }}
           className="text-center mt-16"
         >
           <motion.a
@@ -161,13 +163,32 @@ const Testimonials = () => {
             href={reviewUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-full font-semibold shadow-xl"
+            className="
+              inline-flex
+              items-center
+              gap-3
+              bg-gradient-to-r
+              from-orange-500
+              to-red-500
+              text-white
+              px-8
+              py-4
+              rounded-full
+              font-semibold
+              shadow-xl
+              hover:shadow-orange-500/30
+              transition-all
+              duration-300
+            "
           >
-            <Star size={20} fill="currentColor" />
+            <Star
+              size={20}
+              fill="currentColor"
+            />
             View Google Reviews
             <ExternalLink size={18} />
           </motion.a>
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

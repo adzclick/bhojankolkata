@@ -12,6 +12,7 @@ import About from "../components/About";
 import Testimonials from "../Components/Testimonials";
 import WhyChooseUs from "../components/WhyChooseUs;";
 import Locations from "../components/Locations";
+import Gallery from "../components/Services";
 
 
 
@@ -23,7 +24,7 @@ function Home() {
       <Hero />
      <About></About>
      <Locations></Locations>
-      <Services />
+<Gallery></Gallery>
      
       <Testimonials></Testimonials>
       <Contact></Contact>

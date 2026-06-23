@@ -1,232 +1,149 @@
 import { motion } from "framer-motion";
-import {
-  HeartPulse,
-  UserRound,
-  Users,
-  Bed,
-  Stethoscope,
-  ShieldPlus,
-} from "lucide-react";
+import { Camera, ImageIcon } from "lucide-react";
 
-const Services = () => {
-  const services = [
-    {
-      icon: HeartPulse,
-      title: "Home Nursing Care",
-      description:
-        "Professional nursing services including medication, injections, wound dressing and health monitoring.",
-      color: "emerald",
-      number: "01",
-    },
-    {
-      icon: UserRound,
-      title: "Aya Service",
-      description:
-        "Experienced Ayas providing personal care, feeding assistance and daily support.",
-      color: "blue",
-      number: "02",
-    },
-    {
-      icon: Users,
-      title: "Elderly Care",
-      description:
-        "Dedicated senior citizen care ensuring comfort, safety and companionship.",
-      color: "purple",
-      number: "03",
-    },
-    {
-      icon: Bed,
-      title: "Patient Care",
-      description:
-        "Specialized assistance for bedridden patients with dignity and compassion.",
-      color: "orange",
-      number: "04",
-    },
-    {
-      icon: Stethoscope,
-      title: "Post Surgery Care",
-      description:
-        "Recovery support, wound care and rehabilitation after surgery.",
-      color: "cyan",
-      number: "05",
-    },
-    {
-      icon: ShieldPlus,
-      title: "24/7 Emergency Support",
-      description:
-        "Round-the-clock healthcare attendants available whenever needed.",
-      color: "rose",
-      number: "06",
-    },
-  ];
+import gallery1 from "../assets/pic1.jpeg";
+import gallery2 from "../assets/pic2.jpeg";
+import gallery3 from "../assets/pic3.jpeg";
+import gallery4 from "../assets/pic4.jpeg";
+import gallery5 from "../assets/pic5.jpeg";
+import gallery6 from "../assets/pic6.jpeg";
+import gallery7 from "../assets/pic7.jpeg";
+import gallery8 from "../assets/pic8.jpeg";
+import gallery9 from "../assets/pic9.jpeg";
+import gallery10 from "../assets/pic10.jpeg";
+import gallery11 from "../assets/pic11.jpeg";
+import gallery12 from "../assets/pic12.jpeg";
+import gallery13 from "../assets/pic13.jpeg";
+import gallery14 from "../assets/pic14.jpeg";
+import gallery15 from "../assets/pic15.jpeg";
 
-  const colorClasses = {
-    emerald: "bg-emerald-100 text-emerald-600",
-    blue: "bg-blue-100 text-blue-600",
-    purple: "bg-purple-100 text-purple-600",
-    orange: "bg-orange-100 text-orange-600",
-    cyan: "bg-cyan-100 text-cyan-600",
-    rose: "bg-rose-100 text-rose-600",
-  };
+const galleryImages = [
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery12,
+  gallery13,
+  gallery14,
+  gallery15,
+];
 
+export default function Gallery() {
   return (
     <section
-      id="services"
-      className="relative py-28 bg-gradient-to-b from-white via-slate-50 to-emerald-50 overflow-hidden"
+      id="gallery"
+      className="py-28 bg-gradient-to-b from-orange-50 via-white to-orange-50 overflow-hidden"
     >
-      {/* Background Effects */}
-
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl"></div>
-
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 80,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          transition={{
-            duration: 1.2,
-          }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <span className="px-5 py-2 rounded-full bg-emerald-100 text-emerald-700 font-medium">
-            Our Services
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-100 text-orange-600 font-semibold">
+            <Camera size={18} />
+            Our Gallery
           </span>
 
-          <h2 className="mt-6 text-5xl lg:text-6xl font-bold text-slate-900">
-            Professional Healthcare
-            <span className="block text-emerald-600">
-              At Your Doorstep
+          <h2 className="mt-6 text-4xl lg:text-6xl font-bold text-slate-900">
+            Moments From
+            <span className="block text-orange-500">
+              Bhojan Kolkata
             </span>
           </h2>
 
           <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
-            Trusted nursing, Aya and patient care services delivered
-            with compassion, professionalism and dedication.
+            Explore our authentic Bengali dishes, catering events,
+            restaurant ambience and memorable dining experiences.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
+        {/* Gallery Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {galleryImages.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.05,
+              }}
+              viewport={{ once: true }}
+              whileHover={{
+                y: -10,
+              }}
+              className="group relative overflow-hidden rounded-[30px] shadow-xl bg-white"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={image}
+                  alt={`Gallery ${index + 1}`}
+                  className="
+                    w-full
+                    h-[280px]
+                    object-cover
+                    transition-all
+                    duration-700
+                    group-hover:scale-110
+                  "
+                />
+              </div>
 
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.div
-                key={index}
-                initial={{
-                  opacity: 0,
-                  x:
-                    index % 2 === 0
-                      ? -100
-                      : 100,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 1.3,
-                  delay: index * 0.15,
-                }}
-                whileHover={{
-                  y: -15,
-                  scale: 1.03,
-                }}
-                className="group relative bg-white/80 backdrop-blur-lg rounded-[35px] p-8 border border-white shadow-xl overflow-hidden"
+              {/* Overlay */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black/70
+                  via-black/20
+                  to-transparent
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-all
+                  duration-500
+                  flex
+                  items-end
+                  justify-center
+                  pb-6
+                "
               >
-                {/* Number */}
-
-                <div className="absolute top-6 right-6 text-5xl font-black text-slate-100 group-hover:text-emerald-100 transition-all">
-                  {service.number}
-                </div>
-
-                {/* Icon */}
-
-                <motion.div
-                  animate={{
-                    y: [0, -8, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                  }}
-                  className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-6 ${
-                    colorClasses[service.color]
-                  }`}
-                >
-                  <Icon size={38} />
-                </motion.div>
-
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  {service.title}
-                </h3>
-
-                <p className="text-slate-600 leading-8">
-                  {service.description}
-                </p>
-
-                {/* Bottom Line */}
-
-                <div className="mt-8 h-1 bg-slate-100 rounded-full overflow-hidden">
-                  <motion.div
-                    whileHover={{
-                      width: "100%",
-                    }}
-                    className="h-full bg-gradient-to-r from-emerald-500 to-blue-500 w-20"
+                <div className="text-center text-white">
+                  <ImageIcon
+                    size={28}
+                    className="mx-auto mb-2"
                   />
+                  <p className="font-semibold">
+                    Bhojan Kolkata
+                  </p>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+
+            </motion.div>
+          ))}
+
         </div>
-
-        {/* Bottom Highlight */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 1.4,
-          }}
-          className="mt-20 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-[40px] p-10 text-white text-center shadow-2xl"
-        >
-          <h3 className="text-3xl lg:text-4xl font-bold mb-4">
-            Care You Can Trust
-          </h3>
-
-          <p className="text-lg text-white/90 max-w-3xl mx-auto">
-            From elderly care to post-surgery assistance, our trained
-            healthcare professionals are committed to providing
-            exceptional care in the comfort of your home.
-          </p>
-        </motion.div>
 
       </div>
     </section>
   );
-};
-
-export default Services;
+}
