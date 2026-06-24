@@ -120,16 +120,16 @@ return ( <footer className="relative overflow-hidden bg-slate-950 text-white">
             <p className="text-slate-400">
               Bhojan Kolkata
               <br />
-              Kolkata, West Bengal
+             15 Number Ultadanga Bus Stand,Murari Pukur, Kolkata-700067, West Bengal
             </p>
           </div>
 
           <a
-            href="tel:+919999999999"
+            href="tel:+917003766790"
             className="flex items-center gap-3 text-slate-400 hover:text-orange-400 transition"
           >
             <Phone size={20} />
-            +91 99999 99999
+            +917003766790
           </a>
 
           <div className="flex items-center gap-3 text-slate-400">

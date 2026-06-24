@@ -6,7 +6,7 @@ Star,
 Award,
 CheckCircle,
 } from "lucide-react";
-
+import gallery1 from "../assets/pic1.jpeg";
 const About = () => {
 return ( <section
    id="about"
@@ -29,7 +29,7 @@ return ( <section
         <div className="overflow-hidden rounded-[40px] shadow-[0_40px_100px_rgba(0,0,0,.12)]">
 
           <img
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200"
+            src={gallery1}
             alt="Bhojan Kolkata"
             className="w-full h-[700px] object-cover hover:scale-105 transition duration-700"
           />
